@@ -1,0 +1,35 @@
+<div class="booking-form">
+  <h2>Book {{ tour ? tour.name : hotel?.name }}</h2>
+
+  <!-- Tour Details Section -->
+  <div *ngIf="tour" class="tour-details">
+    <img [src]="tour.imageUrl" alt="{{ tour.name }}">
+    <h3>{{ tour.name }}</h3>
+    <p>{{ tour.description }}</p>
+    <p>Price: {{ tour.price | currency: 'Ksh.' }}</p>
+  </div>
+
+  <!-- Hotel Details Section -->
+  <div *ngIf="!tour" class="hotel-details">
+    <img [src]="hotel?.imageUrl" alt="{{ hotel?.name }}">
+    <h3>{{ hotel?.name }}</h3>
+    <p>{{ hotel?.description }}</p>
+    <p>{{ hotel?.location }}</p>
+    <p>Price: {{ hotel?.price | currency: 'Ksh.' }}</p>
+  </div>
+
+  <!-- Booking Form -->
+  <form [formGroup]="bookingForm" (ngSubmit)="submitBooking()">
+    <label for="name">Name:</label>
+    <input type="text" id="name" formControlName="name"><br><br>
+    <label for="email">Email:</label>
+    <input type="email" id="email" formControlName="email"><br><br>
+    <label for="date">Date:</label>
+    <input type="date" id="date" formControlName="date"><br><br>
+    <button type="submit" [disabled]="!bookingForm.valid">Book Now</button>
+    <!-- <button type="button" (click)="cancelBooking()">Cancel</button> -->
+  </form>
+</div>
+
+
+  

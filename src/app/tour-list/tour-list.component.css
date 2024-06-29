@@ -1,0 +1,49 @@
+h2{
+  text-align: center;
+}
+
+/* tour-list.component.css */
+.tour-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .tour {
+    margin: 20px;
+    width: 250px; 
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .tour img {
+    width: 100%; 
+    height: 150px; 
+    object-fit: cover; 
+    border-radius: 10px 10px 0 0;
+  }
+  
+  .tour h3 {
+    font-weight: bold;
+    margin-top: 10px;
+  }
+  
+  .tour p {
+    font-size: 16px;
+    color: #666;
+  }
+  
+  .book-now-btn {
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .book-now-btn:hover {
+    background-color: #3e8e41;
+  }

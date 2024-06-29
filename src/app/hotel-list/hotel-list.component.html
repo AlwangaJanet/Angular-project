@@ -1,0 +1,13 @@
+<h2>Available Hotels & Staycations</h2>
+
+<div class="hotel-list">
+  <div class="hotel" *ngFor="let hotel of hotels">
+    <h3>{{ hotel.name }}</h3>
+    <img [src]="hotel.imageUrl" alt="{{ hotel.name }}">
+    <p>{{ hotel.description }}</p>
+    <p>{{hotel.location}}</p>
+    <p>{{ hotel.price | currency: 'Ksh.' }}</p>
+    <a [routerLink]="['/booking', 'hotel', hotel.name]" class="book-now-btn">Book Now</a>
+  </div>
+</div>
+  

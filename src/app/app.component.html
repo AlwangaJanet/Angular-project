@@ -1,0 +1,28 @@
+<div class="container">
+    <header>
+      <h1>Premier Vans Tours & Travel.co</h1>
+      <nav>
+        <a routerLink="/home">Home</a>
+        <a routerLink="/tours">Tours</a>
+        <a routerLink="/hotels">Hotels</a>
+        <a routerLink="/home">Booking</a>
+        <a routerLink="/home">Profile</a>
+        <a *ngIf="isLoggedIn()" (click)="logout()">Logout</a>
+
+      </nav>
+    </header>
+    
+    <main>
+      <!-- <app-sign-up></app-sign-up> -->
+      <!-- <app-login></app-login> -->
+       <!-- <app-admin></app-admin> -->
+       <!-- <app-manage-tours></app-manage-tours> -->
+        <!-- <app-manage-hotels></app-manage-hotels> -->
+      <router-outlet></router-outlet>
+    </main>
+  
+    <footer>
+      <p>&copy; 2024 Premier Vans Tours & Travels.co. All rights reserved.</p>
+    </footer>
+  </div>
+  

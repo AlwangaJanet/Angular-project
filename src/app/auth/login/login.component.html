@@ -1,0 +1,22 @@
+<div class="container">
+  <div class="welcome-section">
+    <h1>Welcome to Premier Vans Tours and Travels</h1>
+  </div>
+  <div class="form-section">
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+      <h2>LogIn</h2>
+      <label>E-mail</label>
+      <input type="email" formControlName="email" required>
+    
+      <label>Password</label>
+      <input type="password" formControlName="password" required>
+    
+      <button type="submit">Login</button>
+
+      <p>Create an Account? <a routerLink="/signup">Sign Up</a></p>
+    </form>
+  </div>
+</div>
+
+
+  

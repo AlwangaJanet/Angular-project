@@ -1,0 +1,54 @@
+.manage-hotels {
+    margin: 20px;
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  .form-group label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  .form-group input,
+  .form-group textarea {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+  }
+  
+  .hotel-list {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .hotel-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+  }
+  
+  .hotel-item img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    margin-right: 15px;
+  }
+  
+  .hotel-details {
+    flex-grow: 1;
+  }
+  
+  .hotel-details h3 {
+    margin: 0 0 5px 0;
+  }
+  
+  .hotel-details p {
+    margin: 0 0 5px 0;
+  }
+  
+  button {
+    margin-right: 10px;
+  }
+  

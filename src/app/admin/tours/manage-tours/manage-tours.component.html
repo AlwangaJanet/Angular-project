@@ -1,0 +1,51 @@
+<div class="manage-tours">
+    <h2>Manage Tours</h2>
+  
+    <!-- Form for adding or updating tours -->
+    <form (ngSubmit)="submitForm(tourForm)" #tourForm="ngForm">
+      <div class="form-group">
+        <label for="tourId">ID</label>
+        <input type="text" id="tourId" name="id" [(ngModel)]="selectedTour.id" required>
+      </div>
+      <div class="form-group">
+        <label for="tourName">Name</label>
+        <input type="text" id="tourName" name="name" [(ngModel)]="selectedTour.name" required>
+      </div>
+      <div class="form-group">
+        <label for="tourDescription">Description</label>
+        <textarea id="tourDescription" name="description" [(ngModel)]="selectedTour.description" required></textarea>
+      </div>
+      <div class="form-group">
+        <label for="tourPrice">Price</label>
+        <input type="number" id="tourPrice" name="price" [(ngModel)]="selectedTour.price" required>
+      </div>
+      <div class="form-group">
+        <label for="tourImageUrl">Image URL</label>
+        <input type="text" id="tourImageUrl" name="imageUrl" [(ngModel)]="selectedTour.imageUrl" required>
+      </div>
+      <!-- <div class="form-group">
+        <label for="tourDuration">Duration (days)</label>
+        <input type="number" id="tourDuration" name="duration" [(ngModel)]="selectedTour.duration" required>
+      </div> -->
+  
+      <button type="submit" [disabled]="!tourForm.valid">{{ isEditing ? 'Update' : 'Add' }} Tour</button>
+    </form>
+
+     <!-- List of tours -->
+  <ul class="tour-list">
+    <li *ngFor="let tour of tours">
+      <div class="tour-item">
+        <img [src]="tour.imageUrl" alt="{{ tour.name }}">
+        <div class="tour-details">
+          <h3>{{ tour.name }}</h3>
+          <p>{{ tour.description }}</p>
+          <p><strong>Price:</strong> ${{ tour.price }}</p>
+          <!-- <p><strong>Duration:</strong> {{ tour.duration }} days</p> -->
+          <button (click)="editTour(tour)">Edit</button>
+          <button (click)="deleteTour(tour.id)">Delete</button>
+        </div>
+      </div>
+    </li>
+  </ul>
+  </div>
+  

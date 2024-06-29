@@ -1,0 +1,11 @@
+<h2>Available Tours & Travels</h2>
+
+<div class="tour-list">
+  <div class="tour" *ngFor="let tour of tours">
+    <h3>{{ tour.name }}</h3>
+    <img [src]="tour.imageUrl" alt="{{ tour.name }}">
+    <p>{{ tour.description }}</p>
+    <p>{{ tour.price | currency: 'Ksh.' }}</p>
+    <a [routerLink]="['/booking', 'tour', tour.name]" class="book-now-btn">Book Now</a>
+  </div>
+</div>

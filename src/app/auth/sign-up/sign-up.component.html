@@ -1,0 +1,32 @@
+<div class="container">
+  <div class="welcome-section">
+    <h1>Welcome to Premier Vans Tours and Travels</h1>
+  </div>
+  <div class="form-section">
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+      <label for="name">Username</label>
+      <input id="name" type="text" formControlName="name" required>
+      <div *ngIf="form.get('name')?.invalid && form.get('name')?.touched">
+        <small>Username is required</small>
+      </div>
+
+      <label for="email">Email</label>
+      <input id="email" type="email" formControlName="email" required>
+      <div *ngIf="form.get('email')?.invalid && form.get('email')?.touched">
+        <small>Email is required and must be a valid email address</small>
+      </div>
+
+      <label for="password">Password</label>
+      <input id="password" type="password" formControlName="password" required>
+      <div *ngIf="form.get('password')?.invalid && form.get('password')?.touched">
+        <small>Password must be at least 8 characters long and contain an uppercase letter, a lowercase letter, a number, and a special character</small>
+      </div>
+
+      <button type="submit" [disabled]="form.invalid">Sign Up</button>
+
+      <p>Already have an account? <a routerLink="/login">Login</a></p>
+    </form>
+  </div>
+</div>
+
+  

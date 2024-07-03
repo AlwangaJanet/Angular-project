@@ -7,10 +7,9 @@ import { Hotel } from '../../models/hotel.model';
   providedIn: 'root'
 })
 export class ManageHotelsService {
-  private apiUrl = 'http://localhost:4000/hotels'; // Replace with your API URL
+  private apiUrl = 'http://localhost:4000/hotels'
 
-  // Example API key, replace with your actual authentication mechanism
-  private apiKey = 'YOUR_API_KEY';
+  private apiKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJTdWIiOiJlYTBjNzU5My0xYjkyLTQ3MjUtODNiNC0yMTkxZGNmZGI0MjQiLCJOYW1lIjoiSmFuZXQgQW55b25hIiwiaXNBZG1pbiI6MSwiaWF0IjoxNzIwMDA5MTkzLCJleHAiOjE3MjAwMTYzOTN9.cwem57S_6KZVJA2GMfmSjtH_ieljqoZIgFCUBKpe3Tc';
 
   constructor(private http: HttpClient) { }
 
@@ -18,7 +17,7 @@ export class ManageHotelsService {
     return new HttpHeaders({
       'Content-Type': 'application/json',
       'Authorization': `Bearer ${this.apiKey}`
-    });
+    })
   }
 
   // Fetch all hotels
@@ -52,6 +51,6 @@ export class ManageHotelsService {
     return this.http.delete<void>(url, { headers: this.getHeaders() })
       .pipe(
         catchError(error => throwError(error))
-      );
+      )
   }
 }

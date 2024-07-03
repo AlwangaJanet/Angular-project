@@ -19,7 +19,7 @@ export class ManageToursComponent implements OnInit {
   constructor(private tourService: ManageToursService) { }
 
   ngOnInit(): void {
-    this.fetchTours(); // Fetch tours when component initializes
+    this.fetchTours(); 
   }
 
   fetchTours(): void {
@@ -31,8 +31,8 @@ export class ManageToursComponent implements OnInit {
     const newTour: Tour = newTourForm.value;
     this.tourService.addTour(newTour)
       .subscribe(() => {
-        this.fetchTours(); // Refresh tours after adding
-        newTourForm.resetForm(); // Reset form after adding
+        this.fetchTours(); 
+        newTourForm.resetForm(); 
       });
   }
 
@@ -40,22 +40,22 @@ export class ManageToursComponent implements OnInit {
     const updatedTour: Tour = updatedTourForm.value;
     this.tourService.updateTour(updatedTour)
       .subscribe(() => {
-        this.fetchTours(); // Refresh tours after updating
-        updatedTourForm.resetForm(); // Reset form after updating
-        this.isEditing = false; // Exit editing mode
+        this.fetchTours(); 
+        updatedTourForm.resetForm(); 
+        this.isEditing = false; 
       });
   }
 
   deleteTour(id: string): void {
     this.tourService.deleteTour(id)
       .subscribe(() => {
-        this.tours = this.tours.filter(tour => tour.id !== id); // Remove deleted tour from local list
+        this.tours = this.tours.filter(tour => tour.id !== id); 
       });
   }
 
   editTour(tour: Tour): void {
     this.selectedTour = { ...tour };
-    this.isEditing = true; // Enter editing mode
+    this.isEditing = true; 
   }
 
   submitForm(tourForm: NgForm): void {

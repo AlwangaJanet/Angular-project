@@ -8,6 +8,11 @@ export interface RegisterResponse{
     message:string
 }
 
+export interface loginUser{
+    email:string
+    password:string
+}
+
 
 export interface LoginReq{
     email:string

@@ -24,7 +24,7 @@ export class AuthenticationService {
       headers: {
         'Content-Type': 'application/json'
       }
-    });
+    })
   }
 
   decodeToken(token: string): any {

@@ -19,6 +19,6 @@ export class TourListComponent implements OnInit {
   ngOnInit() {
     this.tourService.getTours().subscribe((tours) => {
       this.tours = tours;
-    });
+    })
   }
 }
